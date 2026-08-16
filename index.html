@@ -105,7 +105,7 @@
   nav{position:fixed;top:0;left:0;right:0;z-index:60;mix-blend-mode:difference;
     padding:clamp(1rem,2vw,1.5rem) 0}
   .nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-  .nav-logo{height:clamp(46px,8vw,126px);width:auto}
+  .nav-logo{height:clamp(58px,8vw,126px);width:auto}
   .nav-links{display:flex;gap:clamp(1.5rem,2.6vw,2.5rem);font-family:var(--syne);
     font-weight:700;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream)}
   .nav-links a{transition:opacity .3s}
@@ -129,6 +129,10 @@
     font-size:clamp(1.6rem,7.5vw,2.6rem);color:var(--cream);letter-spacing:.02em;
     line-height:1.1;text-align:center;max-width:100%}
   .mmenu a:not(.btn):active{color:var(--rose)}
+  /* "Öffnungszeiten" ist mit 14 Buchstaben viel laenger als die uebrigen Eintraege
+     und kann nicht umbrechen. Diese Regel muss nach der allgemeinen stehen,
+     sonst gewinnt bei gleicher Spezifitaet die zuletzt notierte. */
+  .mmenu a.lang{font-size:clamp(1.05rem,5.2vw,1.9rem)}
   .mmenu .btn{margin-top:1rem;font-size:clamp(.9rem,3.6vw,1.05rem);max-width:100%}
 
   /* ---------- BLOBS ---------- */
@@ -486,7 +490,7 @@
   <a href="#leistungen">Leistungen</a>
   <a href="#galerie">Galerie</a>
   <a href="#studio">Studio</a>
-  <a href="#zeiten">Zeiten</a>
+  <a class="lang" href="#zeiten">Öffnungszeiten</a>
   <a class="btn btn-rose" href="https://buchung.treatwell.ch/ort/beautybyvjosa" target="_blank" rel="noopener"><span>Termin buchen</span></a>
 </div>
 
