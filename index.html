@@ -333,6 +333,30 @@
   .infocard p{font-family:var(--inter);font-weight:400;font-size:.92rem;
     line-height:1.6;color:rgba(10,8,9,.72)}
 
+
+  /* ---------- STIMMEN ---------- */
+  /* Mehrspaltiger Satz statt Raster: die Zitate sind unterschiedlich lang,
+     so entstehen keine halbleeren Kaesten. break-inside verhindert, dass ein
+     Zitat mitten drin auf die naechste Spalte umbricht. */
+  .voices{columns:3;column-gap:clamp(1rem,2vw,1.75rem);margin-top:clamp(2.5rem,5vw,4rem)}
+  .voice{break-inside:avoid;-webkit-column-break-inside:avoid;
+    margin:0 0 clamp(1rem,2vw,1.75rem);padding:clamp(1.5rem,2.6vw,2rem);
+    border:1px solid rgba(217,188,140,.28);border-radius:clamp(1.25rem,2.4vw,1.75rem);
+    background:rgba(247,241,236,.03);transition:border-color .4s,background .4s,transform .4s}
+  .voice::before{content:'C';display:block;font-family:var(--syne);font-weight:800;
+    font-size:3.4rem;line-height:.7;color:var(--gold);margin-bottom:.5rem}
+  .voice p{font-family:var(--inter);font-weight:300;
+    font-size:clamp(.95rem,1.35vw,1.06rem);line-height:1.7;color:rgba(247,241,236,.85)}
+  .voice .by{display:block;margin-top:1.25rem;padding-top:1rem;
+    border-top:1px solid rgba(247,241,236,.12)}
+  .voice b{display:block;font-family:var(--syne);font-weight:800;text-transform:uppercase;
+    letter-spacing:.04em;font-size:.9rem;color:var(--cream)}
+  .voice span{display:block;margin-top:.25rem;font-family:var(--inter);font-weight:600;
+    font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rose)}
+  @media (max-width:1000px){ .voices{columns:2} }
+  @media (max-width:620px){ .voices{columns:1} }
+  .z5{z-index:15}
+
   /* ---------- FOOTER (Vollton-Rosé mit rotierenden Ringen, aus v8) ---------- */
   footer{position:relative;overflow:hidden;background:var(--rose);color:var(--dark);
     border-radius:var(--r-sec) var(--r-sec) 0 0;box-shadow:0 -20px 50px rgba(10,8,9,.4);
@@ -491,6 +515,7 @@
   <a href="#leistungen">Leistungen</a>
   <a href="#galerie">Galerie</a>
   <a href="#studio">Studio</a>
+  <a href="#stimmen">Stimmen</a>
   <a class="lang" href="#zeiten">Öffnungszeiten</a>
   <a class="btn btn-rose" href="https://buchung.treatwell.ch/ort/beautybyvjosa" target="_blank" rel="noopener"><span>Termin buchen</span></a>
 </div>
@@ -782,8 +807,68 @@
   </div>
 </section>
 
+<!-- ================= STIMMEN ================= -->
+<section class="sec sec-dark on-dark stack z4" id="stimmen">
+  <div class="wrap">
+    <div class="up" style="text-align:center;margin-bottom:clamp(1rem,2vw,1.5rem)">
+      <p class="eyebrow center">Stimmen</p>
+      <h2 style="margin-top:1.25rem">Was meine <span class="out-gold">Kundinnen</span> sagen</h2>
+    </div>
+    <div class="voices">
+      <blockquote class="voice up">
+        <p>Han nomol welle danke säge für die tolle Nägel, bin super z'friede. Sie gsend so toll us! Au danke für dini Betreuig. Han zum erste Mol mini Nägel loh mache und han e super Erfahrig bi dir döffe mache. Du bisch so e fründlichi und ufgstellti Person, danke viel Mol.</p>
+        <div class="by">
+        <b>Nihann</b>
+        <span>Erstes Neues Set</span>
+        </div>
+      </blockquote>
+      <blockquote class="voice up">
+        <p>Danke nochmals vielmals, ich habe so Freude. Noch nie so schöne Nägel gehabt.</p>
+        <div class="by">
+        <b>Egzona</b>
+        <span>Neues Set Farbe</span>
+        </div>
+      </blockquote>
+      <blockquote class="voice up">
+        <p>Danke dir für die schöne Nägel, ich han mich i die neui Form verliebt.</p>
+        <div class="by">
+        <b>Ariana</b>
+        <span>Auffüllen Farbe</span>
+        </div>
+      </blockquote>
+      <blockquote class="voice up">
+        <p>Danke Zemer für dini mega tolli Arbeit. Ha sooo Freud!</p>
+        <div class="by">
+        <b>Seraina</b>
+        <span>Brow Lamination</span>
+        </div>
+      </blockquote>
+      <blockquote class="voice up">
+        <p>Bin sooo glücklich und Mama auch mit den Nägeln.</p>
+        <div class="by">
+        <b>Leonie</b>
+        <span>Auffüllen French</span>
+        </div>
+      </blockquote>
+      <blockquote class="voice up">
+        <p>Meine Nägel sind perfekt.</p>
+        <div class="by">
+        <b>Almina</b>
+        </div>
+      </blockquote>
+      <blockquote class="voice up">
+        <p>Dankee dir viel mal.</p>
+        <div class="by">
+        <b>Anusha</b>
+        <span>Neues Set French</span>
+        </div>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
 <!-- ================= FOOTER ================= -->
-<footer class="stack z4" id="buchen">
+<footer class="stack z5" id="buchen">
   <div class="ring r1"></div><div class="ring r2"></div>
   <div class="wrap foot-in">
     <h2>Termin<br>buchen</h2>
